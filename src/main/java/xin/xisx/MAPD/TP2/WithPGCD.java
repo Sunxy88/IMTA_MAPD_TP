@@ -16,6 +16,10 @@ public class WithPGCD extends Rational {
         reduce();
     }
 
+    public WithPGCD(Rational r) {
+        this(r.getNumerator(), r.getDenominator());
+    }
+
     /*
     Question 2.3
         1. public Rational sum(Rational r) throws UndefinedRational, Exception
@@ -33,6 +37,31 @@ public class WithPGCD extends Rational {
         6. public Object sum(WithPGCD r, Object o) throws UndefinedRational
             It could be done. This is not an override but an overload.
      */
+
+    @Override
+    public WithPGCD add(Rational r) {
+        Rational res = super.add(r);
+
+        return new WithPGCD(res);
+    }
+
+    @Override
+    public WithPGCD sub(Rational r) {
+        Rational res = super.sub(r);
+        return new WithPGCD(res);
+    }
+
+    @Override
+    public WithPGCD multiply(Rational r) {
+        Rational res = super.multiply(r);
+        return new WithPGCD(res);
+    }
+
+    @Override
+    public WithPGCD divideBy(Rational r) {
+        Rational res = super.divideBy(r);
+        return new WithPGCD(res);
+    }
 
     @Override
     public void setNumerator(Integer numerator) {

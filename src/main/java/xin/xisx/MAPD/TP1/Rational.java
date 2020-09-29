@@ -35,7 +35,7 @@ public class Rational extends Number {
      * @return A new result rational
      */
     public Rational add(Rational r) {
-        Rational res = new Rational();
+        Rational res = new Rational(0, 1);
         if (r.getDenominator().equals(this.denominator)) {
             res.setDenominator(r.denominator);
             res.setNumerator(this.numerator + r.numerator);
@@ -53,7 +53,7 @@ public class Rational extends Number {
      * @return A new result rational
      */
     public Rational sub(Rational r) {
-        Rational tmp = new Rational();
+        Rational tmp = new Rational(0, 1);
         tmp.setNumerator(-r.getNumerator());
         tmp.setDenominator(r.getDenominator());
         return add(tmp);
@@ -65,7 +65,7 @@ public class Rational extends Number {
      * @return A new result rational
      */
     public Rational multiply(Rational r) {
-        Rational res = new Rational();
+        Rational res = new Rational(0, 1);
         res.setDenominator(this.denominator * r.getDenominator());
         res.setNumerator(this.numerator * r.getNumerator());
         return res;
@@ -77,7 +77,7 @@ public class Rational extends Number {
      * @return A new result rational
      */
     public Rational divideBy(Rational r) {
-        Rational tmp = new Rational();
+        Rational tmp = new Rational(0, 1);
         tmp.setNumerator(r.getDenominator());
         tmp.setDenominator(r.getNumerator());
         return multiply(tmp);
