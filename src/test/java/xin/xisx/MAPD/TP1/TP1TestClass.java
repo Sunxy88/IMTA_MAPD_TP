@@ -5,7 +5,7 @@ import org.junit.Test;
 
 import java.util.Random;
 
-public class TestClass {
+public class TP1TestClass {
 
     private Random random;
 

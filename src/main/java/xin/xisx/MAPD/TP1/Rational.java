@@ -1,48 +1,32 @@
 package xin.xisx.MAPD.TP1;
 
-public class Rational {
+import xin.xisx.MAPD.TP2.UndefinedRationalException;
 
-    private Integer numerator;
-    private Integer denominator;
+public class Rational extends Number {
 
-    /**
-     * Euclidean algorithm to get the greatest common divisor
-     * @param i1
-     * @param i2
-     * @return the greatest common divisor
-     */
-    private Integer gcd(int i1, int i2) {
-        while (i2 != 0) {
-            int t = i2;
-            i2 = i1 % i2;
-            i1 = t;
-        }
-        return i1;
+    protected Integer numerator;
+    protected Integer denominator;
+
+
+    public Rational() {
+        throw new UndefinedRationalException();
     }
-
-    /**
-     * Reduction of a fraction
-     */
-    private void reduce() {
-        if (numerator == null || denominator == null)
-            return;
-        Integer g = gcd(numerator, denominator);
-        if (g == 0)
-            return;
-        numerator /= g;
-        denominator /= g;
-        if (denominator < 0 && numerator >= 0) {
-            denominator = - denominator;
-            numerator = - numerator;
-        }
-    }
-
-    public Rational() {}
 
     public Rational(Integer numerator, Integer denominator) {
-        this.numerator = new Integer(numerator);
-        this.denominator = new Integer(denominator);
-        reduce();
+        if (denominator == 0)
+            throw new UndefinedRationalException();
+        this.numerator = numerator;
+        this.denominator = denominator;
+    }
+
+    /**
+     * To test override in WithPGCD class.
+     * @param r
+     * @return
+     * @throws UndefinedRationalException
+     */
+    public Rational sum(Rational r) throws UndefinedRationalException {
+        return add(r);
     }
 
     /**
@@ -106,7 +90,6 @@ public class Rational {
 
     public void setNumerator(Integer numerator) {
         this.numerator = numerator;
-        reduce();
     }
 
     public Integer getDenominator() {
@@ -115,7 +98,26 @@ public class Rational {
 
     public void setDenominator(Integer denominator) {
         this.denominator = denominator;
-        reduce();
+    }
+
+    @Override
+    public int intValue() {
+        return (int) longValue();
+    }
+
+    @Override
+    public long longValue() {
+        return Math.round((0.0 + numerator) / (0.0 + denominator));
+    }
+
+    @Override
+    public float floatValue() {
+        return (float) doubleValue();
+    }
+
+    @Override
+    public double doubleValue() {
+        return (0.0 + numerator) / (0.0 + denominator);
     }
 
     @Override
