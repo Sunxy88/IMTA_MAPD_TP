@@ -88,11 +88,13 @@ public class WithPGCD extends Rational {
      * Reduction of a fraction
      */
     private void reduce() {
-        if (numerator == null || super.denominator == null)
+        if (numerator == null || super.denominator == null) {
             return;
+        }
         Integer g = gcd(numerator, denominator);
-        if (g == 0)
+        if (g == 0) {
             return;
+        }
         numerator /= g;
         denominator /= g;
         if (denominator < 0 && numerator >= 0) {

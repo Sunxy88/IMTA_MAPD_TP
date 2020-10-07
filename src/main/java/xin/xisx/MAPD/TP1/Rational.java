@@ -13,8 +13,9 @@ public class Rational extends Number {
     }
 
     public Rational(Integer numerator, Integer denominator) {
-        if (denominator == 0)
+        if (denominator == 0) {
             throw new UndefinedRationalException();
+        }
         this.numerator = numerator;
         this.denominator = denominator;
     }
@@ -35,15 +36,8 @@ public class Rational extends Number {
      * @return A new result rational
      */
     public Rational add(Rational r) {
-        Rational res = new Rational(0, 1);
-        if (r.getDenominator().equals(this.denominator)) {
-            res.setDenominator(r.denominator);
-            res.setNumerator(this.numerator + r.numerator);
-        }
-        else {
-            res.setDenominator(r.denominator * this.denominator);
-            res.setNumerator(r.denominator * this.numerator + this.denominator + r.numerator);
-        }
+        Rational res = new Rational(this.numerator * r.getDenominator() + this.denominator * r.getNumerator(),
+                r.denominator * this.denominator);
         return res;
     }
 
@@ -130,13 +124,17 @@ public class Rational extends Number {
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
 
         Rational rational = (Rational) o;
 
-        if (!getNumerator().equals(rational.getNumerator())) return false;
-        return getDenominator().equals(rational.getDenominator());
+        return (rational.getNumerator() + 0.0) / (rational.getDenominator() + 0.0) ==
+                (getNumerator() + 0.0) / (getDenominator() + 0.0);
     }
 
     @Override
