@@ -6,5 +6,5 @@ package xin.xisx.MAPD.TP8and9;
  * @param <T>
  */
 public interface ISorted<T extends Comparable<T>> extends ISortable<T> {
-
+    ISorted<T> insert(T t);
 }

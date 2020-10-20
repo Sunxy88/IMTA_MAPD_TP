@@ -35,4 +35,8 @@ public class NotEmptyList<T> implements IList<T> {
     public IList<T> getTail() {
         return tail;
     }
+
+    protected void setHead(T t) {
+        this.head = t;
+    }
 }

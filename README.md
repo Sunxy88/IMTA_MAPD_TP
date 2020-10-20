@@ -14,3 +14,7 @@ to have some practices with the interface.
 ## TP 6
 By implementing an interface in classes [Facture](src/main/java/xin/xisx/MAPD/TP6/facture/implementation/Facture.java) and 
 [Facture](src/main/java/xin/xisx/MAPD/TP6/facture/implementation2/Facture.java) to see what container classes can do in Java.
+
+## TP 8 & 9
+Implement the composite design pattern and singleton pattern, which is challenging. 
+Also get familiar with genericity.
