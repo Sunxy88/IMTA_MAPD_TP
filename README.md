@@ -18,3 +18,6 @@ By implementing an interface in classes [Facture](src/main/java/xin/xisx/MAPD/TP
 ## TP 8 & 9
 Implement the composite design pattern and singleton pattern, which is challenging. 
 Also get familiar with genericity.
+
+## TP 11
+Learn how to use lambda function in Java 8 and jshell in Java 9.
