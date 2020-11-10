@@ -21,3 +21,6 @@ Also get familiar with genericity.
 
 ## TP 11
 Learn how to use lambda function in Java 8 and jshell in Java 9.
+
+## TP13
+Get familiar with advanced use of lambda function and a little of stream.
