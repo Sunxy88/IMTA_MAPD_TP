@@ -1,6 +1,6 @@
 package xin.xisx.MAPD.TP13.codeGiven;
 
-class Person {
+public class Person {
 
 	private final String firstName;
     private final String surname;

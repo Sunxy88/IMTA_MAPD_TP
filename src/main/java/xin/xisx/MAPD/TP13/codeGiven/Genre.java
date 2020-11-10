@@ -1,5 +1,5 @@
 package xin.xisx.MAPD.TP13.codeGiven;
 
-enum Genre {
+public enum Genre {
     HISTORY, FANTASY, SCIFI, WESTERN;
 }

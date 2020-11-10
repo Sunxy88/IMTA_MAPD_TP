@@ -2,7 +2,7 @@ package xin.xisx.MAPD.TP13.codeGiven;
 
 import java.util.List;
 
-class Series {
+public class Series {
     private final String title;
     private final int year;
     private final Genre genre;
@@ -17,16 +17,16 @@ class Series {
         this.nbEpisodes = nbEpisodes;
     }
 
-    String getTitle() {
+    public String getTitle() {
         return title;
     }
-    int getYear() {
+    public int getYear() {
         return year;
     }
-    Genre getGenre() {
+    public Genre getGenre() {
         return genre;
     }
-    List<Person> getCast() { return cast; }
+    public List<Person> getCast() { return cast; }
     @Override
     public String toString(){
         return "Series(" + title + ", " + year + ", " + genre + ", " + cast + ", " + nbEpisodes + ")";
